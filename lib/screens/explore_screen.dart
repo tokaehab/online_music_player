@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:online_music_player/screens/play_screen.dart';
 import 'package:online_music_player/widgets/most_liked_item.dart';
 import 'package:online_music_player/widgets/navigate_bottom_item.dart';
 import 'package:online_music_player/widgets/recommendation_item.dart';
@@ -107,7 +108,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   alignment: Alignment.centerLeft,
                   margin: const EdgeInsets.all(20),
                   child: Text(
-                    'Recommendation',
+                    'Recommendations',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: MediaQuery.of(context).textScaleFactor * 20,
@@ -150,11 +151,46 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     childAspectRatio: 1,
                   ),
                   children: <Widget>[
-                    MostLikedItem('assets/p6.jpg'),
-                    MostLikedItem('assets/p7.jpg'),
-                    MostLikedItem('assets/p3.jpg'),
-                    MostLikedItem('assets/p4.jpg'),
-                    MostLikedItem('assets/avatar.png'),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext ctx) =>
+                                PlayScreen('assets/p6.jpg', 'Song Name')));
+                      },
+                      child: MostLikedItem('assets/p6.jpg'),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext ctx) =>
+                                PlayScreen('assets/p7.jpg', 'Song Name')));
+                      },
+                      child: MostLikedItem('assets/p7.jpg'),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext ctx) =>
+                                PlayScreen('assets/p3.jpg', 'Song Name')));
+                      },
+                      child: MostLikedItem('assets/p3.jpg'),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext ctx) =>
+                                PlayScreen('assets/p4.jpg', 'Song Name')));
+                      },
+                      child: MostLikedItem('assets/p4.jpg'),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext ctx) =>
+                                PlayScreen('assets/avatar.jpg', 'Song Name')));
+                      },
+                      child: MostLikedItem('assets/avatar.png'),
+                    ),
                   ],
                 ),
               ),
